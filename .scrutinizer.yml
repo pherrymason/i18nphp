@@ -40,6 +40,6 @@ tools:
     php_pdepend:
         enabled: true
         excluded_dirs: ["build", "tests", "vendor"]
-#    external_code_coverage:
-#        timeout: 600
-#        runs: 3
+    external_code_coverage:
+        timeout: 600
+        runs: 3
