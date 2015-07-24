@@ -72,8 +72,8 @@ class I18n
     /**
      * Load the Translation object.
      *
-     * @param  [type] $msgid [description]
-     * @param  [type] $lang  [description]
+     * @param  string $msgid
+     * @param  string $lang
      * @return Translation
      */
     private function getTranslation($msgid, $lang = null)
@@ -91,7 +91,8 @@ class I18n
     }
 
     /**
-     * [resolveContext description]
+     * Resolve the real context.
+     *
      * @param  string $context
      *
      * @return string

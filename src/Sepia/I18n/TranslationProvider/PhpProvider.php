@@ -2,6 +2,7 @@
 
 namespace Sepia\I18n\TranslationProvider;
 
+use Sepia\I18n\Exception\TranslationNotFound;
 use Sepia\I18n\Translation;
 
 /**
@@ -35,7 +36,7 @@ class PhpProvider implements TranslationProviderInterface
     protected $cache;
 
     /**
-     * [__construct description]
+     * Constructor
      *
      * todo implement external cache manager.
      */
@@ -74,8 +75,7 @@ class PhpProvider implements TranslationProviderInterface
     /**
      * Load files from disk where translations are stored.
      *
-     * @param  [type] $language [description]
-     * @return [type]           [description]
+     * @param  string $language [description]
      */
     protected function loadLanguageFiles($language)
     {
@@ -86,7 +86,7 @@ class PhpProvider implements TranslationProviderInterface
 
         do {
             $path = implode(DIRECTORY_SEPARATOR, $parts);
-            $files = $this->filesFinder($path);
+            $files = $this->fileFinder($path);
 
             if (count($files) > 0) {
                 $t = [];
