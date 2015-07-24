@@ -98,7 +98,7 @@ class PhpProvider implements TranslationProviderInterface
             }
 
             array_pop($parts);
-        } while ($parts);
+        } while (!empty($parts));
 
         $this->cache[$language] = $table;
     }
